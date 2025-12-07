@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web_5</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class = "main-header">
+        <div class = "logo-container">
+                    <img src="images/microsoft_logo.png" alt="logo-microsoft" class= "microsoft-logo-img">
+            <span class = "logo">Microsoft</span>
+            <div class = "separator"></div> 
+            <span class = "product-title">Azure</span>
+        </div>
+
+        <nav class = "main-nav nav-hiden" id="mainNav">
+            <a href="#proxy-inverso" class="nav-link">Proxy e inverso</a>
+            <a href="#informacion-general" class="nav-link">Información general</a>
+            <a href="#seguridad" class="nav-link">Seguridad</a>
+            <a href="#balanceo-carga" class="nav-link">Balanceo de carga</a>
+            <a href="#rendimiento" class="nav-link">Rendimiento</a>
+        </nav>
+        <button class="menu-toggle" aria-expanded="false" aria-controls="mainNav">&#9776; </button>
+    </header>
+    <main id = "introduccion-azure" class = "azure-hero-section">
+        <div class = "hero-content-left">
+            <h1>Azure Front Door</h1>
+            <p>Es la red de entrega de contenido (CDN) avanzada en la nube de Microsoft, diseñada para proporcionar acceso rápido, confiable y seguro al contenido web estático y dinámico de aplicaciones a nivel mundial.</p>
+            <a href="#informacion-general" class = "btn btn-primary">Información general</a>
+        </div>
+    </main>
+    <section id="informacion-general" class="content-section info-general-layout">
+        <div class="container">
+        
+            <p class="section-subtitle">INFORMACIÓN GENERAL</p>
+            <p class="intro-bold">Una CDN, es una red superpuesta de computadoras (red virtual que se construye encima de otra red física) que contienen copias de datos, colocados en varios puntos de una red.</p>
+        
+            <div class="intro-image-container">
+                <img src="images/diagrama_azure.png" alt="Diagrama de arquitectura de Azure Front Door">
+            </div>
+
+            <div class="card-steps-container">
+                <div class="card-steps">
+                    <div class="feature-text-left">
+                        <p class="step-p">1. El <strong>cliente</strong> se conecta de forma segura a <strong>Azure Front Door</strong>.</p>
+                        <p class="step-p">2. Front Door revisa la solicitud con su <strong>WAF (Web Application Firewall)</strong> y la bloquea si es peligrosa.</p>
+                        <p class="step-p">3. Si Front Door ya tiene la respuesta en <strong>caché</strong>, la envía de inmediato.</p>
+                        <p class="step-p">4. Si no está en caché, Front Door pide la información al <strong>servidor de origen</strong> usando la red privada de Microsoft.</p>
+                        <p class="step-p">5. El servidor de origen envía la respuesta a Front Door.</p>
+                        <p class="step-p">6. Front Door guarda esa respuesta en caché para futuros clientes.</p>
+                        <p class="step-p">7. Front Door <strong>devuelve</strong> la respuesta al cliente.</p>
+                        <p class="step-p">8. El <strong>Firewall del servidor</strong> evita accesos directos desde internet.</p>
+                    </div>
+                    <div class="feature-image-right">
+                        <img src="images/architecture-diagram.png" alt="CDN">
+                    </div>
+                </div>
+            </div>
+            
+            
+        </div>
+    </div>
+</section>
+<section id="proxy-inverso" class="content-section">
+        <div class="container">
+                        <p class="section-subtitle">PROXY E INVERSO</p> 
+                        <h2 class="section-main-title">Descubra cómo funcionan los servidores proxy e inversos</h2>
+                        <div class="cards-proxy-container">
+                
+                                <div class="proxy-card">
+                    <div class="proxy-card-img-container">
+                        <img src="images/forward_proxy_flow.png" alt="Diagrama de Proxy Inverso">
+                    </div>
+                    <div class="proxy-card-content">
+                        <h3 class="card-title">Servidor proxy</h3>
+                        <p class="card-description">En una red informática, es un <strong>servidor —programa o dispositivo—</strong>, que hace de <strong>intermediario</strong> en las peticiones de recursos que realiza un cliente (A) a otro servidor (C).</p>
+                        <a href="#" class="more-info-link">Más información</a>
+                    </div>
+                </div>
+
+                                <div class="proxy-card">
+                    <div class="proxy-card-img-container">
+                        <img src="images/reverse_proxy_flow.png" alt="Diagrama de CDN y Proxy Inverso">
+                    </div>
+                    <div class="proxy-card-content">
+                        <h3 class="card-title">Servidor proxy inverso</h3>
+                        <p class="card-description">Es un tipo de servidor proxy que <strong>recupera recursos en nombre de un cliente externo</strong>, desde uno o más <strong>servidores internos</strong>. Estos recursos se devuelven al cliente como si se originaran en el propio servidor Web.</p>
+                        <a href="#" class="more-info-link">Más información</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+</section>
+    <section id="seguridad" class="content-section">
+    <div class="container">
+        <p class="section-subtitle">SEGURIDAD</p>
+        <h2 class="section-main-title">Seguridad y conformidad integradas</h2>
+        
+        <div class="cards-proxy-container cards-security-4">
+            
+            <div class="proxy-card">
+                <div class="proxy-card-img-container">
+                    <img src="images/1.png" alt="CDN">
+                </div>
+                <div class="proxy-card-content">
+                    <p class="card-description">Actúa como primera línea de defensa para las aplicaciones.</p>
+                </div>
+            </div>
+
+            <div class="proxy-card">
+                <div class="proxy-card-img-container">
+                    <img src="images/2.png" alt="front">
+                </div>
+                <div class="proxy-card-content">
+                    <p class="card-description">Protege direcciones IP y topología interna, y crea una barrera física contra ataques directos.</p>
+                </div>
+            </div>
+
+            <div class="proxy-card">
+                <div class="proxy-card-img-container">
+                    <img src="images/3.png" alt="WAF">
+                </div>
+                <div class="proxy-card-content">
+                    <p class="card-description"><strong>Web Application Firewall (WAF) integrado;</strong> inspecciona cada solicitud en busca de amenazas (inyecciones SQL o cross-site scripting).</p>
+                </div>
+            </div>
+
+            <div class="proxy-card">
+                <div class="proxy-card-img-container">
+                    <img src="images/4.png" alt="icono azure">
+                </div>
+                <div class="proxy-card-content">
+                    <p class="card-description">Conexión nativa con <strong>Azure Active Directory</strong> para identidad, <strong>Azure Monitor</strong> para detección y <strong>Azure Sentinel</strong> para respuesta a incidentes.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<section id="balanceo-carga" class="content-section centered-content">
+    <div class="container">
+        
+        <p class="section-subtitle">BALANCEO DE CARGA</p>
+        <h2 class="section-main-title">Distribución del tráfico para evitar sobrecargas</h2>
+        
+        <div class="load-balancing-features">
+            
+            <div class="feature-item">
+                <div class="feature-text-with-bar">
+                    <div class="content-wrapper"> 
+                        <p><strong>PERMITE</strong></p>
+                        <ul>
+                            <li>Sistemas más rápidos.</li>
+                            <li>Evitar caídas por exceso de usuarios.</li>
+                            <li>Mejorar la disponibilidad y estabilidad de los servicios.</li>
+                        </ul>
+                    </div>
+                    </div>
+            </div>
+
+            <div class="feature-item">
+                <div class="feature-text-with-bar">
+                    <div class="content-wrapper"> 
+                        <p><strong>APORTA</strong></p>
+                        <ul>
+                            <li>Menor latencia.</li>
+                            <li>Estabilidad.</li>
+                            <li>Failover.</li>
+                            <li>Mejor rendimiento.</li>
+                        </ul>
+                    </div>
+                    </div>
+            </div>
+
+            <div class="feature-item">
+                <div class="feature-text-with-bar">
+                    <div class="content-wrapper"> 
+                        <p><strong>TIPOS DE BALANCEO</strong></p>
+                        <ul>
+                            <li><strong>Azure Load Balancer: </strong>Distribuye tráfico TCP/UDP (alta disponibilidad).</li>
+                            <li><strong>Azure Application Gateway: </strong>Balanceo nivel 7 con WAF y enrutamiento por URL.</li>
+                            <li><strong>Traffic Manager: </strong>Balanceo global basado en DNS.</li>
+                            <li><strong>Azure Front Door: </strong>Aceleración global + CDN + seguridad.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+    </div>
+</section>
+<section id="rendimiento" class="content-section info-general-layout">
+    <div class="container">
+        
+        <p class="section-subtitle">RENDIMIENTO</p>
+        
+        <div class="card-steps-container rendimiento-card-container">
+            <div class="card-steps performance-card-bg performance-mixed-layout"> 
+                
+                <div class="feature-row"> 
+                    
+                    <div class="feature-text-left">
+                        
+                        <h2 class="section-main-title main-card-title-inside">Aceleración del tráfico global con arquitectura distribuida</h2>
+
+                        <div class="content-wrapper"> 
+                            <p class="step-p">1. Optimiza el flujo de datos entre usuarios y aplicaciones, reduciendo la latencia a nivel mundial.</p>
+                            <p class="step-p">2. Emplea la infraestructura Edge de Microsoft para servir de forma local, optimizando la experiencia de navegación.</p>
+                            <p class="step-p">3. Sistema de caché distribuido que almacena contenido estático y dinámico, disminuyendo el tiempo de respuesta y evitando viajes innecesarios al servidor de origen.</p>
+                            <p class="step-p">4. Balanceo de carga inteligente que dirige el tráfico al servidor con mejor disponibilidad, garantizando rendimiento estable incluso bajo alta demanda.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-image-right">
+                        <img src="images/mapa.png" alt="Diagrama de red global de Azure Front Door">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<footer class="main-footer">
+    <div class="content-section footer-content">
+        <div class="team-grid" id="team-info-container">
+            </div>
+        
+        <p class="copyright">© 2025 Grupo #5. Todos los derechos reservados.</p>
+    </div>
+</footer>
+
+</body>
+    <script src="main.js"></script>
+</body>
+</html>
