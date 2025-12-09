@@ -26,11 +26,11 @@ function setupSmoothScroll() {
 
 function setupRegistration() {
     const form = document.getElementById('registration-form');
-    
+
     if (form) {
         form.addEventListener('submit', async function(e) {
             e.preventDefault();
-            
+
             const emailInput = document.getElementById('reg-email');
             const email = emailInput.value.trim();
             const submitButton = document.querySelector('.registration-button');
@@ -43,29 +43,42 @@ function setupRegistration() {
             submitButton.disabled = true;
             submitButton.textContent = 'Registrando...';
 
-            console.log(`Intento de registro: ${email}`);
-
             try {
-                await new Promise(resolve => setTimeout(resolve, 1500)); 
-                alert(`Registro completado: ${email} ha sido registrado.`);
-                emailInput.value = '';
-                
-            } catch (error) {
-                console.error('Error durante el proceso de registro:', error);
-                alert('Ocurrió un error. Registre nuevamente.');
-                
-            } finally {
-                submitButton.disabled = false;
-                submitButton.textContent = 'Confirmar registro';
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth' 
+                const response = await fetch('/register-email', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded',
+                    },
+                    body: `email=${encodeURIComponent(email)}` 
                 });
+
+                if (response.status === 204) {
+                    alert('Registro terminado');
+                    emailInput.value = '';
+
+                    window.location.reload(); 
+
+                } else if (response.status === 400) {
+                     alert('Por favor, registre un correo electrónico válido.');
+                } else {
+                    // Error del servidor (500)
+                    alert('Ocurrió un error en el servidor. Registre nuevamente.');
+                }
+
+            } catch (error) {
+                console.error('Error de red durante el registro:', error);
+                alert('No se pudo contactar al servidor. Revise la conexión.');
+
+            } finally {
+                if (response.status !== 204) {
+                    submitButton.disabled = false;
+                    submitButton.textContent = 'Confirmar registro';
+                }
             }
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         });
     }
 }
-
 document.addEventListener('DOMContentLoaded', () => {
     setupMobileMenu();
     setupSmoothScroll(); 
