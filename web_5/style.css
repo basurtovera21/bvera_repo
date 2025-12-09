@@ -305,7 +305,7 @@ body {
     
     .cards-proxy-container {
         flex-direction: row !important;
-        gap: 60px;
+        gap: 30px;
         align-items: stretch;
         justify-content: space-between;
     }
@@ -320,6 +320,7 @@ body {
     }
 
     .cards-security-4 {
+        flex-direction: row;
         flex-wrap: wrap; 
         gap: 30px; 
     }
@@ -358,10 +359,7 @@ body {
         flex: 1;
         max-width: 45%; 
     }
-    .team-grid {
-        grid-template-columns: repeat(4, 1fr); 
-        gap: 20px;
-    }
+
     #team-info-container {
         grid-template-columns: repeat(4, 1fr); 
         gap: 20px; 
@@ -370,10 +368,6 @@ body {
         margin-right: auto;
     }
     
-    .team-grid {
-        grid-template-columns: repeat(4, 1fr); 
-        gap: 20px;
-    }
     .footer-content #team-info-container {
         grid-template-columns: repeat(4, 1fr) !important; 
         gap: 20px;
@@ -391,8 +385,9 @@ body {
 
 .feature-text-left .step-p {
     margin-bottom: 5px;
-    line-height: 1.2;
+    line-height: 1.6;
     font-size: 1rem;
+    line-height: 1.6;
 }
 
 .card-steps-container {
@@ -423,7 +418,7 @@ body {
     font-size: 1.6rem;
     font-weight: 600;
     margin-bottom: 20px;
-    line-height: 1.3;
+    line-height: 1.6;
 }
 
 .feature-row .feature-image-right img {
@@ -438,14 +433,14 @@ body {
     font-weight: 700;
     margin-top: 5px;
     margin-bottom: 30px;
-    line-height: 1.2;
+    line-height: 1.6;
     max-width: 900px; 
 }
 
 .cards-proxy-container {
     display: flex;
-    flex-direction: row !important;
-    gap: 30px;
+    flex-direction: column;
+    gap: 20px;
     align-items: stretch;
     justify-content: flex-start;
 }
@@ -457,7 +452,7 @@ body {
     overflow: hidden; 
     display: flex;
     flex-direction: column;
-    flex: 1 1 100%;
+    flex: 1 1 100%; 
     max-width: 100%;
 }
 
@@ -488,7 +483,7 @@ body {
 
 .card-description {
     font-size: 0.92rem;
-    line-height: 1.5;
+    line-height: 1.6;
     margin-bottom: 5px;
 }
 
@@ -531,7 +526,7 @@ body {
 
 .load-balancing-features ul li {
     font-size: 0.9rem;
-    line-height: 1.4;
+    line-height: 1.6;
     margin-bottom: 5px;
 }
 
@@ -612,9 +607,9 @@ body {
 }
 
 .main-card-title-inside {
-    font-size: 2.2rem; 
+    font-size: 1.8rem; 
     font-weight: 700;
-    line-height: 1.2;
+    line-height: 1.6;
     
     text-align: left !important;
     width: 100%;
@@ -626,10 +621,11 @@ body {
 }
 
 .performance-card-bg .step-p {
-    line-height: 1.5;
+
     margin-bottom: 15px;
     color: #f0f7ff !important;
-    font-size: 0.95rem;
+    font-size: 1rem;
+    line-height: 1.6;
 }
 
 .performance-card-bg .feature-text-left {
@@ -660,46 +656,6 @@ body {
     padding-top: 0;;
 }
 
-.team-grid {
-    display: grid;
-    grid-template-columns: 1fr; 
-    gap: 30px;
-}
-
-.team-member {
-    background-color: #f2f2f2; 
-    padding: 3px 20px;
-    border-radius: 8px;
-    text-align: left; 
-}
-
-.team-member a {
-    color: var(--color-letra); 
-    text-decoration: none;
-    transition: color 0.3s;
-}
-
-.team-member h3 {
-    font-size: 0.92rem; 
-    font-weight: 600;
-    margin-top: 0;
-    margin-bottom: 5px; 
-}
-
-.team-member p {
-    font-size: 0.83rem; 
-    line-height: 1.4;
-    margin-bottom: 5px; 
-    margin-top: 0;
-}
-
-.main-footer .team-member a {
-    color: var(--color-letra) !important;
-}
-
-.main-footer .team-member a:hover {
-    color: var(--color-boton);
-}
 
 .copyright {
     font-size: 0.75rem;
@@ -731,4 +687,70 @@ body {
 
 .content-section .section-subtitle {
     margin-bottom: 10px !important;
+}
+
+.registration-label {
+    font-size: 0.82rem; 
+    color: rgba(0, 0, 0, 0.6); 
+    display: block; 
+    margin-bottom: 5px;
+    text-align: left;
+    font-weight: 400;
+    width: 100%;
+    max-width: 450px;
+}
+
+.input-button-group {
+    display: flex;
+    width: 100%;
+    max-width: 450px;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+
+.registration-input {
+    flex-grow: 1; 
+    padding: 9px 12px; 
+    font-size: 0.82rem; 
+    
+    border: none;
+    border-radius: 0;
+    outline: none;
+}
+
+.registration-button {
+    background-color: var(--color-boton);
+    color: white;
+    border: none;
+    
+    padding: 8px 18px; 
+    font-size: 0.82rem; 
+    
+    font-weight: 600;
+    border-radius: 0; 
+    transition: background-color 0.3s;
+    flex-shrink: 0;
+}
+
+.registration-button:hover {
+    background-color: #005aa3;
+    cursor: pointer;
+}
+
+.registration-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    width: 100%;
+}
+
+.registration-title {
+    color: var(--color-letra); 
+    font-size: 1rem; 
+    font-weight: 2200;
+    margin-bottom: 3px; 
+    text-align: center;
 }
